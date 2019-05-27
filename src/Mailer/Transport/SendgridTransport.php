@@ -105,11 +105,11 @@ class SendgridTransport extends AbstractTransport
                 'SendGrid error %s %s: %s',
                 $response->getStatusCode(),
                 $response->getReasonPhrase(),
-                implode('; ', $response->json['errors'])
+                implode('; ', $response->getJson['errors'])
             ));
         }
 
-        return $response->json;
+        return $response->getJson;
     }
 
     /**
